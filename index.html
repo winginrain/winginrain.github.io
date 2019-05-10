@@ -1,1358 +1,217 @@
 <!DOCTYPE html>
+<html lang="en">
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang>
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <!--Description-->
   
 
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-
-
-
-
-
+  <!--Author-->
   
+  <meta name="author" content="John Doe">
   
-  <link rel="canonical" href="http://yoursite.com/">
 
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Hexo">
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Hexo">
+  <!--Type page-->
+  
+      <meta property="og:type" content="website">
+  
+  <!--Page Cover-->
+  
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
+  <!-- Title -->
+  
   <title>Hexo</title>
-  
 
 
+  <link rel="shortcut icon" href="/images/favicon.ico">
 
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-  
-  
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <nav class="container">
+    <a class="header-logo" href="/" rel="home">
+      
+      <img src="/images/header-avatar.png" alt="Hexo">
+      
+    </a>
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
     
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
-        <span class="logo-line-after"><i></i></span>
+    
+      <a class="header-link pull-right " href="/about">
+        关于
       </a>
-    </div>
+      
     
+      <a class="header-link pull-right " href="/archives">
+        归档
+      </a>
+      
     
-  </div>
+      <a class="header-link pull-right " href="/page">
+        文章
+      </a>
+      
+    
+      <a class="header-link pull-right " href="/works">
+        作品
+      </a>
+      
+    
+  </nav>
+</header>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Navigationsleiste an/ausschalten">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
 
-
-
-<nav class="site-nav">
+  <!-- Main Content -->
   
-    <ul id="menu" class="menu">
+<div class="site-content home">
+  
+    
+
+
+  
+  <!-- 最近文章 -->
+  <div class="container container-articles">
+    
+      <div class="space-lg"></div>
+      <h1 class="section-title">
+        <span>Recent Posts</span>
+        <a href="/page" class="btn-more pull-right">more</a>
+      </h1>
+      <p class="section-description">最近的一些想法</p>
+    
+    <ul class="row articles-list section-list">
       
-        
-        
-        
           
-          <li class="menu-item menu-item-home menu-item-active">
 
-    
-    
-    
+<li class="col-sm-6 col-md-4 section-item">
+  <a class="list-item" href="/2019/04/24/读书笔记（二）/">
+    <div>
+      <h3 class="item-title"># uml核心元素——think in UML读书笔记（二）</h3>
+      <p class="item-desc">2019-04-24</p>
+    </div>
+  </a>
+</li>
+
       
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
-
-  </li>
-        
-        
-        
           
-          <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
-
-  </li>
+<li class="col-sm-6 col-md-4 section-item">
+  <a class="list-item" href="/2019/04/24/UML的意义/">
+    <div>
+      <h3 class="item-title"># UML基础——Thinking in UML读书笔记（一）</h3>
+      <p class="item-desc">2019-04-24</p>
+    </div>
+  </a>
+</li>
 
       
+          
+
+<li class="col-sm-6 col-md-4 section-item">
+  <a class="list-item" href="/2019/03/05/firstblog/">
+    <div>
+      <h3 class="item-title"># firstblog</h3>
+      <p class="item-desc">2019-03-05</p>
+    </div>
+  </a>
+</li>
+
+      
+          
+
+<li class="col-sm-6 col-md-4 section-item">
+  <a class="list-item" href="/2019/03/05/hello-world/">
+    <div>
+      <h3 class="item-title"># Hello World</h3>
+      <p class="item-desc">2019-03-05</p>
+    </div>
+  </a>
+</li>
+
       
     </ul>
-  
-
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/读书笔记（二）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/24/读书笔记（二）/" class="post-title-link" itemprop="url">uml核心元素——think in UML读书笔记（二）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-04-24 19:57:37" itemprop="dateCreated datePublished" datetime="2019-04-24T19:57:37+08:00">2019-04-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Bearbeitet am</span>
-                
-                <time title="Geändert am: 2019-05-10 19:13:17" itemprop="dateModified" datetime="2019-05-10T19:13:17+08:00">2019-05-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Thinking-in-UML/" itemprop="url" rel="index"><span itemprop="name">Thinking in UML</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="UML版型（Stereotype）"><a href="#UML版型（Stereotype）" class="headerlink" title="UML版型（Stereotype）"></a>UML版型（Stereotype）</h2><p>  UML中每个元模型都有很多版型。e.g. 用例：业务用例，业务用例实现；类：接口、边界类、实体类；</p>
-<h2 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>  参与者（actor）在建模过程中处于核心地位，是在系统之外与系统交互的某人或某事物。<br>  参与者特性：</p>
-<ol>
-<li>位于系统之外。主动启动这个业务。</li>
-<li>参与者可以非人。只要主动启动的一方即可认为是成参与者。</li>
-</ol>
-<h3 id="参与者相关概念"><a href="#参与者相关概念" class="headerlink" title="参与者相关概念"></a>参与者相关概念</h3><p>  业务主角：参与者的一个版型，特别用于定义业务的参与者在需求阶段使用。业务主角是业务系统有着交互的人和事物，他们用于确定业务范围。业务主角针对的是业务人员而非计算机用户，由业务主角的业务模型建立的计算机系统模型。<br>  业务工人：系统边界的一部分，被动参与业务，没有具体的目的。（业务主角：购票人；业务工人：人工订票）<br>  涉众（stakeholder）：干系人，与这个系统有利益关系的一切人和事。参与者是涉众代表。参与者对系统的要求直接影响系统的建设，他们的要求就是系统需求的来源。<br>  用户：系统的使用者，参与者的代表，实例或代理。<br>  角色：系统中一类职责。一个用户可以代理多个参与者，被指定多个角色。</p>
-<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2><h3 id="用例基本概念"><a href="#用例基本概念" class="headerlink" title="用例基本概念"></a>用例基本概念</h3><p>  用例：把现实世界的需求捕获下来的方法。用例定义了一组用例实例，其中每个实例都是系统所执行的一系列操作，这些操作生成特定主角可以观测的值。用例=交互+可观测的有意义的结果+活动。<br>  完整的用例定义=参与者+前置条件+场景+后置条件<br>  系统的功能性：对系统有需求的参与者要做的一些事情构成的。所有需求可以通过用例达到，那么即可确定该系统。</p>
-<h3 id="用例的特征"><a href="#用例的特征" class="headerlink" title="用例的特征"></a>用例的特征</h3><ol>
-<li>用例是相对独立的。不需要与其他用例交互而独立完成参与者的目的。</li>
-<li>用例的执行结果对参与者来说是<strong>可观测的</strong>和<strong>有意义的</strong>。</li>
-<li>用例必须由一个参与者发起。</li>
-<li>用例必然以动宾短语形式出现。</li>
-<li>一个用例就是一个需求单元，分析单元，设计单元，开发单元，测试单元</li>
-<li>用例的来源是参与者对系统的期望<br><img src="/2019/04/24/读书笔记（二）/1556199977745.png" alt="1556199977745"><h3 id="用例的粒度"><a href="#用例的粒度" class="headerlink" title="用例的粒度"></a>用例的粒度</h3>用例的粒度——以多大的事件作为一个完整的用例。在概念建模阶段，以每个用例能描述一个完整的事件流为宜。在系统建模阶段，用例视角是针对计算机的，用例的粒度用一个用例能够描述操作者与计算机的一次完整交互为宜。<br>用例的粒度选择在不同系统中有较大差异，一般用于适应不同的需求范围。一般在10-50之间。<h3 id="业务用例（business-use-case"><a href="#业务用例（business-use-case" class="headerlink" title="业务用例（business use case)"></a>业务用例（business use case)</h3>用例版型的一种，用于需求阶段的业务建模。一个业务用例的多个业务用例实现是为了达到同一个目的。业务建模是针对客户业务的模型，与计算机系统建模无关，是业务领域的一个模型。<br>业务用例有多种实现方式，同一个接口可以有多个实现类，业务用例实现是实现对象追溯到需求的一个重要环节。我们通过业务用例实现将得到关键业务对象，再从业务对象转化到设计对象。<h3 id="概念用例"><a href="#概念用例" class="headerlink" title="概念用例"></a>概念用例</h3>概念用例用于获取业务模型中关键概念，分析出业务模型组的核心业务结果以得到一个易于理解的业务框架。业务架构在这个阶段产生。<br>作为概念模型中的核心元素，概念用例用于获取业务用例中的核心业务逻辑。概念用例是从业务用例到系统用例过渡是重要的指导。<h3 id="系统用例"><a href="#系统用例" class="headerlink" title="系统用例"></a>系统用例</h3>系统用例可简称为用例，是用于定义系统范围、获取功能性需求的，是软件系统开发的全部范围，是我们得到的最终需求。<br>（系统）用例实现是实现对象追溯到需求的一个重要环节。做完用例模型后，直接进入数据库表设计以及类设计。</li>
-</ol>
-<h2 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h2><p>  边界在UML图符中的定义是一个矩形框。在面向对象中，每个对象都有一个边界，外界只能通过边界来认识对象，操作对象，但无法进入对象内部。<br>  边界有以下性质：</p>
-<ol>
-<li>边界决定视界。通过变幻边界，改变世界，从多个侧面描述同一个信息，从而最大程度地附和真实的需求。</li>
-<li>边界决定抽象层次。可以通过自顶向下方法（通过逐步缩小边界，进而影响我们观察到的事物，决定相应的抽象层次，使得分析粒度逐步细化），也可以自底向上方法（边界设定到较小范围，再逐步扩大）</li>
-<li>灵活使用边界。边界可以在需求方面以及设计层面发挥重要作用。对于软件设计，有很大的信息量，既要实现需求，又要保证性能，有扩展能力，且友好易用——可以通过设计适当的边界。</li>
-</ol>
-<h2 id="业务实体"><a href="#业务实体" class="headerlink" title="业务实体"></a>业务实体</h2><p>  业务实体是类(class)的一个版型，用于在业务建模阶段建立领域模型。业务实体抽象出问题领域内核心和关键的概念。官方定义：业务实体代表业务角色执行业务用例式所处理或使用的事物，经常代表某个对多个业务用例或用例实例有价值的事物。<br>  业务实体的性质如下：</p>
-<ol>
-<li>业务实体来自现实世界</li>
-<li>业务实体在分析业务流程（即业务用例场景）的过程中发现的。即业务实体必须至少被一个业务用例场景使用或创建。</li>
-<li>业务实体是类的一个版型，具有对象的所有性质，包括属性，方法，对象的独立性。对象的独立性是指业务实体只应当包含它自身固有的特性，而不应包含外界是如何使用它的信息。<h3 id="业务实体的属性以及方法"><a href="#业务实体的属性以及方法" class="headerlink" title="业务实体的属性以及方法"></a>业务实体的属性以及方法</h3>属性是用来保存业务实体特征的一个记录，业务实体的属性集合决定了它的唯一性。<br>方法是访问一个业务实体的句柄，规定了外部可以怎么来使用它。<h3 id="获取业务实体"><a href="#获取业务实体" class="headerlink" title="获取业务实体"></a>获取业务实体</h3>获取业务实体的方法：</li>
-<li>建立业务用例场景。业务用例场景时参与者实现其业务目标的过程描述。</li>
-<li>从业务用例场景中诸葛分析动词后面的名词。从业务实体的备选对象选取初始的业务实体。</li>
-<li>分析业务实体之间的关系。</li>
-</ol>
-<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>  包是一种容器，可以将信息分类，从而形成逻辑单元。目的： 整合复杂信息，对语义上相关或某方面具有共同点的信息进行分包。<br>  包是UML中常用的元素，用于容纳并为其他元素分类。包可以容纳任何UML元素（用例，业务实体，类图）。好的分包应该具有高内聚，低耦合的性质。</p>
-<h3 id="分包原则："><a href="#分包原则：" class="headerlink" title="分包原则："></a>分包原则：</h3><ol>
-<li>元素分包后，同一个包中的元素应相互联系紧密。同时这些元素具有某些相同的性质，使得包可以抽象出一些接口代表包内事物与包外的事物交互。</li>
-<li>修改一个包中元素，其他包中的内容不受影响。包之间无依赖关系或松耦合关系。</li>
-<li>若无法解除依赖关系，那么包之间的依赖关系不会被传递</li>
-<li>报纸剪的依赖应该是单向的。<h3 id="常用的包的版型"><a href="#常用的包的版型" class="headerlink" title="常用的包的版型"></a>常用的包的版型</h3></li>
-<li>领域包（Domain Package）：用于分类业务领域内的业务单位，领域包视图可用于展示这些业务领域的高层次关系。</li>
-<li>子系统（Subsystem）：用于分类系统内的逻辑对象并形成子系统。子系统包视图可用于展示系统的高层次逻辑结构关系。</li>
-<li>组织结构（Orgnaizatioin unit）：组织结构包用于分类业务领域中的组织结构，用于表述企业的组织结构。</li>
-<li>层（Layer）：分类软件中的层次，用于展示软件的架构信息。<h2 id="分析类"><a href="#分析类" class="headerlink" title="分析类"></a>分析类</h2>分析类：用于获取系统中主要的职责簇，可代表系统的原型类。<br>分析类是从业务需求向系统设计转化过程中最为主要的元素，在高层次抽象出系统实现业务需求的原型，业务需求通过分析类逻辑化。<br>分析类由边界类，控制类，实体类三部分组成，都是类的版型。<h3 id="边界类"><a href="#边界类" class="headerlink" title="边界类"></a>边界类</h3>边界类：用于对系统外部环境与其内部运作之间的交互进行建模的类。交互包括：转换事件，记录系统表示方式中的变更。任何有交互的关键对象之间都应考虑建立边界类。<h4 id="边界类的常用场景："><a href="#边界类的常用场景：" class="headerlink" title="边界类的常用场景："></a>边界类的常用场景：</h4></li>
-<li>参与者与用例之间应当建立边界类。</li>
-<li>用例与用例之间如果有交互，应当建立边界类。（可演化为一组API、一组JMS消息或一组代理类）</li>
-<li>用例与系统边界之外的非人对象。</li>
-<li>在相关联的业务对象有明星的独立性要求。<h4 id="边界类的特点："><a href="#边界类的特点：" class="headerlink" title="边界类的特点："></a>边界类的特点：</h4></li>
-<li>边界类应该有助于提高系统的可用性</li>
-<li>边界类应该尽可能地保持在较高的层次上</li>
-<li>边界类应该合理封装介于系统与角色之间的交互</li>
-<li>主角改变为系统提供输入的方式，只需改变边界类</li>
-<li>系统改变输出的方式，只需改变边界类</li>
-<li>边界类必须知道其他对象类型的需求，并且相对于系统内部元素保持其可用性和有效性。<h3 id="控制类"><a href="#控制类" class="headerlink" title="控制类"></a>控制类</h3>控制类用于对一个或几个用例所特有的控制行为进行建模。控制对象（控制类实例）通常控制其他对象。<br>在UML的定义中，控制类主要起到协调对象的作用。比如边界类通过控制类访问实体类，或实体类通过控制类访问另一个实体类。<br>在设计阶段，控制类可以被设计为Session Bean、COM+、Server Let、Java类、C++类等。<h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3>实体类用于对必须存储的信息和相关行为建模的类。实体对象（实体类的实例）用于保存和更新一些现象的有关信息。实体类通畅时候永久性的，它们所具有的属性和关系是长期需要的，甚至在系统的整个生存期都需要。<br>在设计阶段，实体类可以被设计为Entity Bean、POJO、SDO、XML Bean等设计类甚至是一条SQL语句。在架构角度上，实体类主要位于数据持久层，实体类的获取对架构设计中的数据持久层有指导意义。<h3 id="分析类的作用"><a href="#分析类的作用" class="headerlink" title="分析类的作用"></a>分析类的作用</h3>分析类是从业务需求向系统设计转化过程中最为主要的元素，在高层次抽象出系统实现也无需求的原型，业务需求通过份额锡类被逻辑化，成为可以被计算机理解的语义。<br>分析类应高于设计实现、高于语言实现、高于实现方式，专注于解决需求问题。</li>
-</ol>
-<h2 id="设计类"><a href="#设计类" class="headerlink" title="设计类"></a>设计类</h2><p>  设计类是系统实施中一个或多个对象的抽象。设计类所对应的嗯对象取决于实施语言，设计类用于设计模型中，直接使用与编程语言相通的语言来描述。<br>  分析类：为设计类中所需要的界面、逻辑和数据提供抽象基础，设计类可以从分析类中演化出来。</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>  类对对象进行定义，而对象又实现用例。类的来源可以是用例实现对系统所需对象的需求（实现业务需求），可以是任何以前已开发的对象模型。类说明对象是什么，也决定对象拥有什么属性、方法。<br>  类是对对象某一方面特征的归纳和抽象，而对象则是类实例化的结果。</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>  属性是对象特征，表明对象的唯一性。只有对象单独具有的特征才建模为属性，否则使用类的关联关系或聚合关系对特征进行建模。</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>  访问对象或影响其他对象的属性或关系的唯一途径是方法。对象的方法由它的类进行定义。 类定义的方法是由实例化的对象执行的，也可以由类执行（JAVA中的静态方法）</p>
-<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><ol>
-<li>公有：出了类本身以外，属性和方法对其他模型元素是可视的，应尽量少用</li>
-<li>保护：属性和方法只对类本身、它的自雷或有缘（取决于具体语言）是可视的。（默认）</li>
-<li>私有：属性和方法只对类本身和类的友元是可视的。可以用在不希望子类继承属性和方法的情况下。它提供了从超累对子类去耦的方法，并且减少了删除或排除未使用继承操作的需要。</li>
-<li>实施：属性和方法只在类本身的内部是可视的。<h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2>抽象出对象之间的联系，让对象构成某个特定的结构。<h3 id="关联关系（association）"><a href="#关联关系（association）" class="headerlink" title="关联关系（association）"></a>关联关系（association）</h3>关联关系是用一条直线表示。用于描述不同类的对象之间的结构关系。在一段时间内将多个类的实例链接在一起。可以使用关联关系表示一个对象了解其他对象。<br>关联=知道<br>$A - B$ ：相互知道<br>$A \to B$ ：单向知道，A知道B，B不知道A</li>
-</ol>
-<h3 id="依赖关系（dependency）"><a href="#依赖关系（dependency）" class="headerlink" title="依赖关系（dependency）"></a>依赖关系（dependency）</h3><p>  依赖关系是用一条带箭头的虚线表示的。e.g. $A \dashrightarrow B$ （A依赖于B）。<br>  依赖关系描述一个对象的修改会导致另一个对象的修改这样的关系。依赖=知道+使用<br>  e.g. A对象保存B对象的ID，但没有对B对象操作，仅仅知道 ——使用关联<br>  A对象使用B对象的属性或方法，B的修改会导致A的修改——使用依赖</p>
-<h3 id="扩展关系（extends）"><a href="#扩展关系（extends）" class="headerlink" title="扩展关系（extends）"></a>扩展关系（extends）</h3><p>  扩展关系是用一条带箭头的虚线加版型&lt;\<extends>&gt;来表示的。<br>  扩展关系用于在用例模型中说明想基本用例中某个扩展点插入扩展用例。扩展用例带有抽象性质的，表示用例场景中的某个支流，由特定的扩展点触发而被启动。扩展用例应当用在概念用例模型中，通过分析业务用例场景抽象出关键的可选核心业务而形成扩展用例。<br>  在以下理由下可以使用扩展关系：</extends></p>
-<ol>
-<li>表明用例的某一部分是可选的系统行为</li>
-<li>只在特定条件下才执行分支流（如触发警报）</li>
-<li>可能有一组行为段，其中一个或多个段可以在基本用例的扩展点出插入。所插入的行为段取决于执行基本用例时与主角进行的交互。</li>
-<li><p>多个基本用例都有可能触发一个可选的分支流。</p>
-<p>e.g. 打电话过程中，收到新到的电话——选择保留当前通话  </p>
-<h3 id="包含关系（include）"><a href="#包含关系（include）" class="headerlink" title="包含关系（include）"></a>包含关系（include）</h3><p>包含关系是用一条带箭头的虚线加版型&lt;\<include>&gt;表示，用于用例模型，说明基本用例的用例实例过程中插入的行为段。<br>包含用例总是带有抽象性质的，基本用例可控制与包含用例的关系，并可依赖于执行包含用例所得的结果，但基本用例和包含用例都不能访问对方的属性。</include></p>
-</li>
-</ol>
-<h3 id="实现关系（realize）"><a href="#实现关系（realize）" class="headerlink" title="实现关系（realize）"></a>实现关系（realize）</h3><p>  实现关系是用一条带空心箭头的虚线表示。用于在用例模型中连接用例和用例实现，说明基本用例的一个实现方式。实现所代表的含义是，基本用例描述了一个业务目标，但是该业务目标有多重可能的实现途径，每一种实现途径可以用用例实现来表示。用例实现与基本用例之间就构成实现关系。<br><img src="/2019/04/24/读书笔记（二）/1557321946380.png" alt="1557321946380"></p>
-<h3 id="精化关系（refine）"><a href="#精化关系（refine）" class="headerlink" title="精化关系（refine）"></a>精化关系（refine）</h3><p>  精化关系是用一条带箭头的虚线加版型&lt;\<refine>&gt;表示，特别用于用例模型，一个基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致地展示基本用例的核心业务。<br>  精化关系表示由基本对象可以分解为更明确、精细的子对象，这些子对象并没有增加、减少、改变基本对象的行为和属性，只是更加细致和明确化了。精化关系仅仅由于建模阶段。<br>  <img src="/2019/04/24/读书笔记（二）/1557325607969.png" alt="1557325607969"></refine></p>
-<h3 id="泛化关系（generalization）"><a href="#泛化关系（generalization）" class="headerlink" title="泛化关系（generalization）"></a>泛化关系（generalization）</h3><p>  泛化关系是用一条带空心箭头的直线表示。泛化关系可用于建模的任意阶段，说明对象之间的继承关系。在泛化关系中，基本对象被泛化后成为子对象后，子对象继承了基本对象的所有特征，并且子对象可以增加、改变基本对象的行为和属性。<br>  泛化关系表示一个类对另一个类的继承（后代、祖先）。<br>  下图表示A继承自B<br><img src="/2019/04/24/读书笔记（二）/1557327420759.png" alt="1557327420759"></p>
-<h3 id="聚合关系（aggregatioin）"><a href="#聚合关系（aggregatioin）" class="headerlink" title="聚合关系（aggregatioin）"></a>聚合关系（aggregatioin）</h3><p>  聚合关系是用一条带空心菱形箭头的直线表示。<br>  聚合关系用于类图，特别用于表示实体对象之间的关系，表述整体由部分构成的语义。<br>  其中，聚合关系中整体和部分不是强依赖的。整体不存在是，部分依然存在。例如部门撤销后，人员依旧存在。<br>  下图表示A聚合到B上，或者B由A组成。<br><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557326068789.png" alt="1557326068789"></p>
-<h3 id="组合关系（composition）"><a href="#组合关系（composition）" class="headerlink" title="组合关系（composition）"></a>组合关系（composition）</h3><p>  组合关系是用一条带实心菱形箭头的直线表示。组合关系用于类图，特别用于表示实体对象个关系，表达整体拥有部分语义。组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分将不存在。例如母公司解体了，子公司将不存在。<br>  下图表示A组合成B，或者说B由A构成。<br><img src="/2019/04/24/读书笔记（二）/1557326894499.png" alt="1557326894499"></p>
-<h3 id="关系汇总"><a href="#关系汇总" class="headerlink" title="关系汇总"></a>关系汇总</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">关系</th>
-<th style="text-align:center">表述</th>
-<th style="text-align:center">图形</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">关联</td>
-<td style="text-align:center">相互知道，存在箭头时单向知道</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327487065.png" alt="1557327487065"></td>
-</tr>
-<tr>
-<td style="text-align:center">依赖</td>
-<td style="text-align:center">知道+使用，一般为单向</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327478321.png" alt="1557327478321"></td>
-</tr>
-<tr>
-<td style="text-align:center">扩展</td>
-<td style="text-align:center">基本用例中加入扩展点</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327468600.png" alt="1557327468600"></td>
-</tr>
-<tr>
-<td style="text-align:center">包含</td>
-<td style="text-align:center">明基本用例的用例实例过程中插入的行为段。</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327457633.png" alt="1557327457633"></td>
-</tr>
-<tr>
-<td style="text-align:center">实现</td>
-<td style="text-align:center">基本用例的一个实现方式（完成目的的方法）</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327449055.png" alt="1557327449055"></td>
-</tr>
-<tr>
-<td style="text-align:center">精化</td>
-<td style="text-align:center">细致和明确化了</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327439273.png" alt="1557327439273"></td>
-</tr>
-<tr>
-<td style="text-align:center">泛化</td>
-<td style="text-align:center">继承，可以增加改变属性以及行为</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557327424378.png" alt="1557327424378"></td>
-</tr>
-<tr>
-<td style="text-align:center">聚合</td>
-<td style="text-align:center">整体与部分关系，不是强依赖</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557326068789.png" alt="1557326068789"></td>
-</tr>
-<tr>
-<td style="text-align:center">组合</td>
-<td style="text-align:center">整体与部分关系，强依赖</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/1557326894499.png" alt="1557326894499"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>  组件是系统中实际存在的可更换部分，实现特定的功能，符合一套接口标准并实现一组接口。组件代表系统中的一部分物理实施，包括软件代码或其等价物。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/UML的意义/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/24/UML的意义/" class="post-title-link" itemprop="url">UML基础——Thinking in UML读书笔记（一）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-04-24 17:31:59" itemprop="dateCreated datePublished" datetime="2019-04-24T17:31:59+08:00">2019-04-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Bearbeitet am</span>
-                
-                <time title="Geändert am: 2019-05-10 19:04:37" itemprop="dateModified" datetime="2019-05-10T19:04:37+08:00">2019-05-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Thinking-in-UML/" itemprop="url" rel="index"><span itemprop="name">Thinking in UML</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="UML的意义"><a href="#UML的意义" class="headerlink" title="UML的意义"></a>UML的意义</h2><h3 id="什么是UML"><a href="#什么是UML" class="headerlink" title="什么是UML"></a>什么是UML</h3><p>  统一建模语言（Unified Modeling Language）起始于面向对象的分析方法，由Booch, Jacobson, Rumbaugh三人将各自的方法统一起来，从而提出统一建模语言。UML作为一种建模用的语言，由基本词汇以及语法两部分组成。UML定义一些建立模型需要的，表达某种特定含义的基本元素，即元模型。UML也定义元模型之间相互关系的规则，用以建立模型来映射现实世界。这些规则和图形被称为表示法或视图（View），也就是语法。<br>  统一语言：将需求，设计，代码分由不同的团队处理。为了不同团队的顺利沟通，使用统一的语言来覆盖<strong>整个软件过程</strong>，允许人与机器都能读懂。<br>  可视化：由于人脑对图形的接受能力较强，采用可视化的方式呈现。UML通过其元模型和表示法，把那些通过文字或其他表达方法很难表达清楚的，隐晦的潜台词使用简单直观的图形表达和暴露出来。<br>  <img src="/2019/04/24/UML的意义/1556028454461.png" alt="UML可视化的例子"></p>
-<h3 id="从现实世界到业务模型（通过UML）"><a href="#从现实世界到业务模型（通过UML）" class="headerlink" title="从现实世界到业务模型（通过UML）"></a>从现实世界到业务模型（通过UML）</h3><p>  数学建模：解决某个问题而建立的一个数学模型，通过数字计算来分析和预测，找到解决问题的方法。<br>  广义上的建模：人们解决现实世界问题的一种常用手段。通过对客观事物建立一种抽象的方法，用来表征事物并获得对事物本身的理解，再把这种理解概念化，并将这些逻辑概念组织起来，形成对所观察的对象内部结构和工作原理的便于理解的表达。<br>  因此，模型应该有：</p>
-<ol>
-<li>有一个论述过程，使得建立过程是严谨的。</li>
-<li><p>结果可追溯和验证的。</p>
-<p>软件建模：严谨的+可追溯+验证的=描述清楚需求+容易转化为计算机。<br>UML采用参与者的元模型作为信息来源提供者（也就是客户），采用用例的一种元模型来表示驱动着的业务目标（参与者的目标）。用例的实现方式，通过业务场景（business scenario）以及用例场景(use case scenario)的UML视图描绘（也就是规则）。UML最后通过业务对象模型（Business Object Model）的视图说明达成目标的过程中涉及到的事物，采用逻辑概念来表示（也就是物）。UML由此将人事物规则模型化。</p>
-<h3 id="从业务模型到概念模型"><a href="#从业务模型到概念模型" class="headerlink" title="从业务模型到概念模型"></a>从业务模型到概念模型</h3><p>原始需求信息（业务模型）到可执行代码还有一定的距离。必须将其转化为可以知道开发的表达方式。UML通过概念化的过程来建立适合计算机理解和实现的模型——分析模型（Analysis Model）。分析模型介于原始需求和计算机实现之间，是一种过渡模型，上可映射原始需求，下可为计算机实现规定一种高层次的抽象。<br>分析模型最主要的元模型有：边界类（Boundary，决定外部能对里面做什么），实体类（entity，映射参与者完成业务目标所涉及的事物，可重新归纳和组织信息，建立逻辑关联，添加那些实际业务中不会用到的，但是执行计算机逻辑时需要的控制信息），控制类（control，表述原始需求中的动态信息，也就是动作）。<br>在这个阶段，通过对这些分析类在不同的视角上进行归纳和正例，以表达软件所要求的的一些信息（包，组件以及节点），软件架构和框架也在这个阶段产生。</p>
-</li>
-</ol>
-<h3 id="从概念模型到设计模型"><a href="#从概念模型到设计模型" class="headerlink" title="从概念模型到设计模型"></a>从概念模型到设计模型</h3><p>  概念模型让我们获得软件的蓝图，获得建设软件所需要的所有组成内容以及建设软件所需要的所有必要细节。<br>  设计模型的工作：建造零部件，组成所需要的软件。在大多数情况下实现类可以简单地分析类映射而来。其中，概念模型中的边界类妆花为操作界面或系统接口；控制类转化为计算程序或控制程序（工作流）；实体类转化为数据库表、xml文档或者其他带有持久化特征的类。转化过程一般可以遵循：软件架构和框架，编程语言，规范或中间件。<br><img src="/2019/04/24/UML的意义/1556032328378.png" alt="UML模型的转化"></p>
-<h3 id="统一过程（RUP，Raioinal-Unified-Process）简介"><a href="#统一过程（RUP，Raioinal-Unified-Process）简介" class="headerlink" title="统一过程（RUP，Raioinal Unified Process）简介"></a>统一过程（RUP，Raioinal Unified Process）简介</h3><p>  统一过程：归纳和继承软件开发活动的最佳实践，定义软件开发过程中最重要的阶段和工作（四个阶段，九个核心工作流），定义了曾参与软件开发过程中的各种角色和他们的职责，且定义了软件开发过程中产生的工件（成果物或者制品，在软件生产过程中任何留下记录的事物），并且提供了模板。最后，采用演进式软件生命周期将工作、角色和成果串联起来，形成统一过程。<br>  统一过程是一个庞大和复杂的知识体系，囊括了软件开发这一生产过程所需要知识的方方面面，是一种重量级的方法，主要适用于中大型软件开发。</p>
-<h2 id="建模基础"><a href="#建模基础" class="headerlink" title="建模基础"></a>建模基础</h2><h3 id="建模（Modeling）"><a href="#建模（Modeling）" class="headerlink" title="建模（Modeling）"></a>建模（Modeling）</h3><p>  建模：通过对客观事物建立一种抽象的方法用以表征事物兵获得对事物本身的理解，同时把这种理解概念化，将这些逻辑概念组织起来，构成一种对所观察的对象的内部结构和工作原理的便于理解的表达。<br>  两个问题：（1）怎么建？（2）模是什么？<br>  怎么建取决于你选择的抽象角度，即建立这个模型的目的是什么。“模是什么”依赖于确定了抽象角度下的场景模拟，基于场景模拟，找出抽象的对象。模=静态的事物（物）+特定的条件（规则）+特定的动作（参与者的驱动）=特定的场景（事件）<br>  公式如下：<br><img src="/2019/04/24/UML的意义/1556093551490.png" alt="UML建模相关公式"></p>
-<h3 id="用例驱动（统一过程）"><a href="#用例驱动（统一过程）" class="headerlink" title="用例驱动（统一过程）"></a>用例驱动（统一过程）</h3><p>  用例驱动是统一过程的重要概念，整个软件生产过程就是用例驱动的。解决问题领域的方式就是归纳出所有的抽象角度（用例），为这些用例描述出可能的特定场景，并且找到实现这些场景的事物规则以及行为。一旦用例实现，问题领域就解决了（用例驱动的原理）。<br>  用例驱动视图如下。表明用例可以驱动的内容包括逻辑视图，进程视图，部署视图，以及实施视图。</p>
-<ol>
-<li>逻辑视图：（系统中只有一个）以图形方式说明关键的用例实现、子系统、包和类，它们包含在构架方面具有重要含义的行为，即建模公式化中的那些人、事、物、规则是如何<strong>分类组织的</strong>。</li>
-<li>进程视图（系统中只有一个）用于理解系统的进程组织，以图形方式说明了系统中进程的详细组织结构，其中包括类和子系统到进程和线程的映射，即建模公式中的人、事、物、规则是如何<strong>交互的及其关系</strong>。</li>
-<li>部署视图以图形方式说明过处理活动在系统中各节点的分布，包括进程和线程的物理分布，即建模公式中的人、事、物。规则是如何<strong>部署在物理节点（主机、网络环境）</strong>上的。</li>
-<li>实施视图：用于获取为实施制定的架构决策。内容包括模型中的子系统，子系统如何组织为层次和分层结构的构件图，描述子系统见导入依赖关系的图解。用于分配工作，估算代码量，阐明大规模复用理由，考虑发布策略。<br><img src="/2019/04/24/UML的意义/1556094781311.png" alt="用例视图"><h3 id="抽象层次（面向对象）"><a href="#抽象层次（面向对象）" class="headerlink" title="抽象层次（面向对象）"></a>抽象层次（面向对象）</h3>抽象层次的特征： 抽象层次越高，具体信息越少，概括能力越强；反之，具体信息越丰富，结果越确定，但相应的概括能力越弱。<br>抽象有两种方法：一是自顶向下（便于理解），另一种是自底向上（用于在实践中改进和提高认识）。</li>
-</ol>
-<h3 id="视图（UML建模）"><a href="#视图（UML建模）" class="headerlink" title="视图（UML建模）"></a>视图（UML建模）</h3><p>  视图用于组织UML元素，表达出模型某一方面的含义。视图的准确应用是建立好模型的一个重要组成部分。对于视图所呈现的信息，选择视角（观察事物的角度）很关键。建模的核心在针对不同的人员展示他们所关心的那一部分视角。</p>
-<h2 id="对象分析方法"><a href="#对象分析方法" class="headerlink" title="对象分析方法"></a>对象分析方法</h2><p>对象分析方法的特点：</p>
-<ol>
-<li><p>一切都是对象。</p>
-</li>
-<li><p>对象都是<strong>独立</strong>的。对象与对象之间天然独立，只是在某个特定的场景下，他们的某一个特定的实例才互相联系在一起。因此，如果要深入了解对象，就是分析多个该对象的实例所参与的场景，以获得对象的多个侧面，再通过归纳整理该对象的多个实例抽象出对象的一般特性。这就是对象的分析方法，也是UML为对象建模的方法。</p>
-</li>
-<li><p>对象具有<strong>原子性</strong>。对象是不可分割的原子，在与其他对象交互时就是一个整体。对于对象的认识分析应该仅仅基于对象的边界，在实现这个对象之前不理会内部的细节。以上就是面向接口编程思想。</p>
-</li>
-<li><p>对象是<strong>可抽象</strong>的。对象在参与一个场景时会展现出某一个方面，将该方面抽象出来，让其作为对象的一个代表来参与场景的交互。对象所具有的方面，越多，对象越有抽象的价值。</p>
-</li>
-<li><p>对象都有<strong>层次性</strong>。层次越高，描述越是粗略但适应能力越广；层次月底则描述越精准，但适应能力越下降。在分析过程中，设定适合的抽象层次，在每个层次上适合的抽象成都的对象描述，可有效地减少分析的难度和工作量。</p>
-<p><img src="/2019/04/24/UML的意义/1556097650782.png" alt="对象设计方法"></p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/firstblog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/05/firstblog/" class="post-title-link" itemprop="url">firstblog</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-03-05 17:35:09" itemprop="dateCreated datePublished" datetime="2019-03-05T17:35:09+08:00">2019-03-05</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-03-05 17:16:42" itemprop="dateCreated datePublished" datetime="2019-03-05T17:16:42+08:00">2019-03-05</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">John Doe</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">Artikel</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Kategorien</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">schlagwörter</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-
-  
-
-  
+  <div class="space-xlg"></div>
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+  <!-- Footer -->
+  
+<footer class="footer text-center">
+  <div class="container">
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
+      <div class="footer-qrcode text-center">
+        <img src="/images/weixin-qrcode.png">
       </div>
     
-
-    
-
-    
-
-    
+    <div class="footer-social">
+      
+        
+          
+        
+          
+            <a href="https://dribbble.com/leadream" class="icon icon-dribbble" target="_blank">
+              <img src="/images/dribbble.svg">
+            </a>
+          
+        
+          
+            <a href="https://github.com/leadream" class="icon icon-behance" target="_blank">
+              <img src="/images/behance.svg">
+            </a>
+          
+        
+          
+            <a href="https://leadream.zcool.com.cn/" class="icon icon-zcool" target="_blank">
+              <img src="/images/zcool.svg">
+            </a>
+          
+        
+          
+            <a href="https://github.com/leadream" class="icon icon-github" target="_blank">
+              <img src="/images/github.svg">
+            </a>
+          
+        
+          
+            <a href="mailto:leadream4@gmail.com" class="icon icon-mail" target="_blank">
+              <img src="/images/mail.svg">
+            </a>
+          
+        
+      
+    </div>
+    <div>
+      <span>Hexo &copy; 2019</span>
+      
+        <span class="split">|</span>
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/leadream/hexo-theme-juuust" target="_blank">Juuust</a></span>
+      
+    </div>
   </div>
+</footer>
 
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-  
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>
