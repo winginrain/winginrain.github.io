@@ -161,11 +161,11 @@
 <h3 id="包含关系（include）"><a href="#包含关系（include）" class="headerlink" title="包含关系（include）"></a>包含关系（include）</h3><p>包含关系是用一条带箭头的虚线加版型&lt;\<include>&gt;表示，用于用例模型，说明基本用例的用例实例过程中插入的行为段。<br>包含用例总是带有抽象性质的，基本用例可控制与包含用例的关系，并可依赖于执行包含用例所得的结果，但基本用例和包含用例都不能访问对方的属性。</include></p>
 </li>
 </ol>
-<h3 id="实现关系（realize）"><a href="#实现关系（realize）" class="headerlink" title="实现关系（realize）"></a>实现关系（realize）</h3><p>  实现关系是用一条带空心箭头的虚线表示。用于在用例模型中连接用例和用例实现，说明基本用例的一个实现方式。实现所代表的含义是，基本用例描述了一个业务目标，但是该业务目标有多重可能的实现途径，每一种实现途径可以用用例实现来表示。用例实现与基本用例之间就构成实现关系。<br><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557321946380.png" alt="1557321946380"></p>
-<h3 id="精化关系（refine）"><a href="#精化关系（refine）" class="headerlink" title="精化关系（refine）"></a>精化关系（refine）</h3><p>  精化关系是用一条带箭头的虚线加版型&lt;\<refine>&gt;表示，特别用于用例模型，一个基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致地展示基本用例的核心业务。<br>  精化关系表示由基本对象可以分解为更明确、精细的子对象，这些子对象并没有增加、减少、改变基本对象的行为和属性，只是更加细致和明确化了。精化关系仅仅由于建模阶段。<br>  <img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557325607969.png" alt="1557325607969"></refine></p>
-<h3 id="泛化关系（generalization）"><a href="#泛化关系（generalization）" class="headerlink" title="泛化关系（generalization）"></a>泛化关系（generalization）</h3><p>  泛化关系是用一条带空心箭头的直线表示。泛化关系可用于建模的任意阶段，说明对象之间的继承关系。在泛化关系中，基本对象被泛化后成为子对象后，子对象继承了基本对象的所有特征，并且子对象可以增加、改变基本对象的行为和属性。<br>  泛化关系表示一个类对另一个类的继承（后代、祖先）。<br>  下图表示A继承自B<br><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327420759.png" alt="1557327420759"></p>
-<h3 id="聚合关系（aggregatioin）"><a href="#聚合关系（aggregatioin）" class="headerlink" title="聚合关系（aggregatioin）"></a>聚合关系（aggregatioin）</h3><p>  聚合关系是用一条带空心菱形箭头的直线表示。<br>  聚合关系用于类图，特别用于表示实体对象之间的关系，表述整体由部分构成的语义。<br>  其中，聚合关系中整体和部分不是强依赖的。整体不存在是，部分依然存在。例如部门撤销后，人员依旧存在。<br>  下图表示A聚合到B上，或者B由A组成。<br><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557326068789.png" alt="1557326068789"></p>
-<h3 id="组合关系（composition）"><a href="#组合关系（composition）" class="headerlink" title="组合关系（composition）"></a>组合关系（composition）</h3><p>  组合关系是用一条带实心菱形箭头的直线表示。组合关系用于类图，特别用于表示实体对象个关系，表达整体拥有部分语义。组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分将不存在。例如母公司解体了，子公司将不存在。<br>  下图表示A组合成B，或者说B由A构成。<br><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557326894499.png" alt="1557326894499"></p>
+<h3 id="实现关系（realize）"><a href="#实现关系（realize）" class="headerlink" title="实现关系（realize）"></a>实现关系（realize）</h3><p>  实现关系是用一条带空心箭头的虚线表示。用于在用例模型中连接用例和用例实现，说明基本用例的一个实现方式。实现所代表的含义是，基本用例描述了一个业务目标，但是该业务目标有多重可能的实现途径，每一种实现途径可以用用例实现来表示。用例实现与基本用例之间就构成实现关系。<br><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557321946380.png" alt="1557321946380"></p>
+<h3 id="精化关系（refine）"><a href="#精化关系（refine）" class="headerlink" title="精化关系（refine）"></a>精化关系（refine）</h3><p>  精化关系是用一条带箭头的虚线加版型&lt;\<refine>&gt;表示，特别用于用例模型，一个基本用例可以分解出许多更小的关键精化用例，这些精化用例更细致地展示基本用例的核心业务。<br>  精化关系表示由基本对象可以分解为更明确、精细的子对象，这些子对象并没有增加、减少、改变基本对象的行为和属性，只是更加细致和明确化了。精化关系仅仅由于建模阶段。<br>  <img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557325607969.png" alt="1557325607969"></refine></p>
+<h3 id="泛化关系（generalization）"><a href="#泛化关系（generalization）" class="headerlink" title="泛化关系（generalization）"></a>泛化关系（generalization）</h3><p>  泛化关系是用一条带空心箭头的直线表示。泛化关系可用于建模的任意阶段，说明对象之间的继承关系。在泛化关系中，基本对象被泛化后成为子对象后，子对象继承了基本对象的所有特征，并且子对象可以增加、改变基本对象的行为和属性。<br>  泛化关系表示一个类对另一个类的继承（后代、祖先）。<br>  下图表示A继承自B<br><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327420759.png" alt="1557327420759"></p>
+<h3 id="聚合关系（aggregatioin）"><a href="#聚合关系（aggregatioin）" class="headerlink" title="聚合关系（aggregatioin）"></a>聚合关系（aggregatioin）</h3><p>  聚合关系是用一条带空心菱形箭头的直线表示。<br>  聚合关系用于类图，特别用于表示实体对象之间的关系，表述整体由部分构成的语义。<br>  其中，聚合关系中整体和部分不是强依赖的。整体不存在是，部分依然存在。例如部门撤销后，人员依旧存在。<br>  下图表示A聚合到B上，或者B由A组成。<br><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557326068789.png" alt="1557326068789"></p>
+<h3 id="组合关系（composition）"><a href="#组合关系（composition）" class="headerlink" title="组合关系（composition）"></a>组合关系（composition）</h3><p>  组合关系是用一条带实心菱形箭头的直线表示。组合关系用于类图，特别用于表示实体对象个关系，表达整体拥有部分语义。组合关系是一种强依赖的特殊聚合关系，如果整体不存在了，则部分将不存在。例如母公司解体了，子公司将不存在。<br>  下图表示A组合成B，或者说B由A构成。<br><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557326894499.png" alt="1557326894499"></p>
 <h3 id="关系汇总"><a href="#关系汇总" class="headerlink" title="关系汇总"></a>关系汇总</h3><table>
 <thead>
 <tr>
@@ -178,47 +178,47 @@
 <tr>
 <td style="text-align:center">关联</td>
 <td style="text-align:center">相互知道，存在箭头时单向知道</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327487065.png" alt="1557327487065"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327487065.png" alt="1557327487065"></td>
 </tr>
 <tr>
 <td style="text-align:center">依赖</td>
 <td style="text-align:center">知道+使用，一般为单向</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327478321.png" alt="1557327478321"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327478321.png" alt="1557327478321"></td>
 </tr>
 <tr>
 <td style="text-align:center">扩展</td>
 <td style="text-align:center">基本用例中加入扩展点</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327468600.png" alt="1557327468600"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327468600.png" alt="1557327468600"></td>
 </tr>
 <tr>
 <td style="text-align:center">包含</td>
 <td style="text-align:center">明基本用例的用例实例过程中插入的行为段。</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327457633.png" alt="1557327457633"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327457633.png" alt="1557327457633"></td>
 </tr>
 <tr>
 <td style="text-align:center">实现</td>
 <td style="text-align:center">基本用例的一个实现方式（完成目的的方法）</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327449055.png" alt="1557327449055"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327449055.png" alt="1557327449055"></td>
 </tr>
 <tr>
 <td style="text-align:center">精化</td>
 <td style="text-align:center">细致和明确化了</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327439273.png" alt="1557327439273"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327439273.png" alt="1557327439273"></td>
 </tr>
 <tr>
 <td style="text-align:center">泛化</td>
 <td style="text-align:center">继承，可以增加改变属性以及行为</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557327424378.png" alt="1557327424378"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557327424378.png" alt="1557327424378"></td>
 </tr>
 <tr>
 <td style="text-align:center">聚合</td>
 <td style="text-align:center">整体与部分关系，不是强依赖</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557326068789.png" alt="1557326068789"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557326068789.png" alt="1557326068789"></td>
 </tr>
 <tr>
 <td style="text-align:center">组合</td>
 <td style="text-align:center">整体与部分关系，强依赖</td>
-<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/hexo\source\_posts\读书笔记（二）\1557326894499.png" alt="1557326894499"></td>
+<td style="text-align:center"><img src="/2019/04/24/读书笔记（二）/OneDrive\hexo\source\_posts\读书笔记（二）\1557326894499.png" alt="1557326894499"></td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/24/读书笔记（二）/" data-id="cjvhz56ix0009s4v2vdmy3kt6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/24/读书笔记（二）/" data-id="cjvhzal7c0009m0v215wtnhm3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
@@ -303,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/24/UML的意义/" data-id="cjvhz56in0004s4v24300pjga" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/24/UML的意义/" data-id="cjvhzal740004m0v22kdy70fb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
@@ -341,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/05/firstblog/" data-id="cjvhz56i30000s4v2pgryyfbx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/05/firstblog/" data-id="cjvhzal6l0000m0v2qhigh21i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -386,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/05/hello-world/" data-id="cjvhz56ib0002s4v2wdv8ozf7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/05/hello-world/" data-id="cjvhzal6q0002m0v21kx6dv0g" class="article-share-link">Share</a>
       
       
     </footer>
