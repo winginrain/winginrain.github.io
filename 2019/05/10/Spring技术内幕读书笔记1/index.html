@@ -96,15 +96,18 @@
 
 
 
-  <meta name="keywords" content="Spring,Java框架">
+  <meta name="description" content="Spring Ioc容器概述控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）  面向对象中对象的依赖关系：在面向对象的系统中，对象封装了数据和对数据的处理，对象之间的依赖关系体现在数据和方法的依赖上。比如：A依赖于B是指，一个类A使用到另一个类B，这种关系具有偶然性的、临时性的、非常弱的，并且B的">
+<meta name="keywords" content="Spring,Java框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring技术内幕读书笔记1">
+<meta property="og:title" content="Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1">
 <meta property="og:url" content="http://winginrain.github.io/2019/05/10/Spring技术内幕读书笔记1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Spring Ioc容器概述控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）  面向对象中对象的依赖关系：在面向对象的系统中，对象封装了数据和对数据的处理，对象之间的依赖关系体现在数据和方法的依赖上。比如：A依赖于B是指，一个类A使用到另一个类B，这种关系具有偶然性的、临时性的、非常弱的，并且B的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-12T01:50:02.867Z">
+<meta property="og:updated_time" content="2019-05-14T07:40:51.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring技术内幕读书笔记1">
+<meta name="twitter:title" content="Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1">
+<meta name="twitter:description" content="Spring Ioc容器概述控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）  面向对象中对象的依赖关系：在面向对象的系统中，对象封装了数据和对数据的处理，对象之间的依赖关系体现在数据和方法的依赖上。比如：A依赖于B是指，一个类A使用到另一个类B，这种关系具有偶然性的、临时性的、非常弱的，并且B的">
 
 
 
@@ -122,7 +125,7 @@
   };
 </script>
 
-  <title>Spring技术内幕读书笔记1 | Hexo</title>
+  <title>Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1 | Hexo</title>
   
 
 
@@ -304,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring技术内幕读书笔记1
+          <h1 class="post-title" itemprop="name headline">Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1
 
               
             
@@ -347,7 +350,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-12 09:50:02" itemprop="dateModified" datetime="2019-05-12T09:50:02+08:00">2019-05-12</time>
+                <time title="Modified: 2019-05-14 15:40:51" itemprop="dateModified" datetime="2019-05-14T15:40:51+08:00">2019-05-14</time>
               
             
           </span>
@@ -399,7 +402,10 @@
       
 
       
-        
+        <h2 id="Spring-Ioc容器概述"><a href="#Spring-Ioc容器概述" class="headerlink" title="Spring Ioc容器概述"></a>Spring Ioc容器概述</h2><h3 id="控制反转（Inverse-of-Control），依赖注入（Dependency-Injection）与依赖查找（Dependency-Lookup）"><a href="#控制反转（Inverse-of-Control），依赖注入（Dependency-Injection）与依赖查找（Dependency-Lookup）" class="headerlink" title="控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）"></a>控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）</h3><p>  面向对象中对象的依赖关系：在面向对象的系统中，对象封装了数据和对数据的处理，对象之间的依赖关系体现在数据和方法的依赖上。比如：A依赖于B是指，一个类A使用到另一个类B，这种关系具有偶然性的、临时性的、非常弱的，并且B的改变会影响到类A。在正常情况下，我们需要在程序中先声明类B，类B确定后类A才能在方法中调用类B。如果合作对象的引用或依赖关系的管理由具体对象来完成，那么当类的个数变多时，代码将高度耦合并且难以测试。<br>  控制反转：将对在自身对象中的一个内置对象的控制权反转。即从具体对象（内置对象）手中交出控制权，交给一个容器，应用程序只需要提供对象的类型。这是一种解耦的设计思想。<br>  实现IoC的技术手段有：依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）。<br>  依赖注入（Depedency Injection）：自身对象中的内置对象通过注入的方式进行创建，主要有三种实现方式，接口注入（interface injection），Set注入（setter injection）和构造注入（constructor injection)。其中，接口注入是指在接口中定义要注入的信息，并通过（实现implement）接口完成注入。Set注入是指在接受注入的类中定义一个Set方法，并在参数中定义需要注入的元素。构造注入是指在接受注入的勒种定义一个构造方法，并在参数中定义需要注入的元素。<br>  依赖查找（dependency Lookup）：类自身去寻找自己依赖的类。分为两类：依赖拖拽（Dependency Pull）以及上下文依赖查找（Contextualized Dependency Lookup）<br>  依赖拖拽：注入的对象如何与组件发生联系。注册是在从一个集中的注册处，特定的地点执行（XML文件集中管理）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DependencyPullDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        BeanFactory beanFactory = getBeanFactory();</span><br><span class="line">        MessageService messageService = (MessageService) beanFactory.getBean(<span class="string">"service"</span>);</span><br><span class="line">        messageService.execute();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> BeanFactory <span class="title">getBeanFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DefaultListableBeanFactory beanFactory = <span class="keyword">new</span> DefaultListableBeanFactory();</span><br><span class="line">        BeanDefinitionReader reader = <span class="keyword">new</span> PropertiesBeanDefinitionReader(beanFactory);</span><br><span class="line">        reader.loadBeanDefinitions(<span class="keyword">new</span> ClassPathResource(<span class="string">"/META-INF/spring/ioc-pull-context.properties"</span>));</span><br><span class="line">        <span class="keyword">return</span> beanFactory;</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//作者：vince_zww</span></span><br><span class="line"><span class="comment">//链接：https://www.jianshu.com/p/26654a18d1fe</span></span><br><span class="line"><span class="comment">//来源：简书</span></span><br><span class="line"><span class="comment">//简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</span></span><br></pre></td></tr></table></figure></p>
+<p>  上下文依赖查找(Contextualized Dependency Lookup)：查找的过程是在容器管理的资源中进行的，而不是从集中注册表中，并且通常是作用在某些设置点上。这种情况在注解情况下使用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ContextualizedDependencyLookupDemo</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Set&lt;ManagedComponent&gt; components = <span class="keyword">new</span> HashSet&lt;ManagedComponent&gt;();  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MessageServiceComponent</span> <span class="keyword">implements</span> <span class="title">ManagedComponent</span></span>&#123; </span><br><span class="line">        <span class="keyword">private</span> MessageService messageService;  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lookup</span><span class="params">(BeanFactory beanFactory)</span> </span>&#123; </span><br><span class="line">            <span class="keyword">this</span>.messageService = (MessageService) beanFactory.getBean(<span class="string">"service"</span>); </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//作者：vince_zww</span></span><br><span class="line"><span class="comment">//链接：https://www.jianshu.com/p/26654a18d1fe</span></span><br><span class="line"><span class="comment">//来源：简书</span></span><br><span class="line"><span class="comment">//简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="IoC容器和依赖反转模式"><a href="#IoC容器和依赖反转模式" class="headerlink" title="IoC容器和依赖反转模式"></a>IoC容器和依赖反转模式</h3><p>  依赖控制反转的实现由多种，在Spring框架中，IoC容器是实现这种模式的载体，可以在对象生成或初始化时直接将数据注入到对象中，也可以将对象引用注入到对象数据域中的方式注入对方法调用的依赖。<br>  通过使用IoC容器，对象依赖关系的管理被反转，转到IoC容器中，对象之间的相互依赖关系由IoC容器进行管理，并由IoC容器完成对象的注入。从而简化应用的开发，把应用从复杂的对象依赖关系管理解放出来。<br>  非IoC模式的开发，如EJB，应用开发人员需要编写EJB组件，该组件需要满足EJB容器的规范，从而运行在EJB容器中，从而获取事务管理，生命周期管理这些组件容器的规范，才能运行在EJB容器中，从而获取事物管理，生命周期管理这些组件开发的基本服务。对于EJB，一个简单的EJB组件需要编写远程/本地接口、Home接口以及Bean的实现类，并且EJB运行是不能脱离EJB容器的，查找其他EJB组件也需要通过注入JNDI这样的方式，从而造成了对EJB容器和技术规范的依赖。<br>  在Spring中，Spring IoC提供一个基本的<strong>JavaBean容器</strong>，通过IoC模式管理依赖关系，并通过依赖注入和AOP切面增强了一个基本的JavaBean容器,通过IoC模式管理依赖关系，并通过依赖注入和AOP切面增强了为JavaBean这样的POOJO对象赋予事务管理、生命周期管理等功能。Spring通过将EJB组件还原成POJO对象或者JavaBean对象，从而降低应用开发对传统J2EE技术规范的依赖。</p>
+
       
     </div>
 
@@ -447,6 +453,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/14/Spring技术内幕读书笔记2/" rel="prev" title="SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2">
+                SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -489,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,7 +524,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -576,6 +595,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Ioc容器概述"><span class="nav-number">1.</span> <span class="nav-text">Spring Ioc容器概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制反转（Inverse-of-Control），依赖注入（Dependency-Injection）与依赖查找（Dependency-Lookup）"><span class="nav-number">1.1.</span> <span class="nav-text">控制反转（Inverse of Control），依赖注入（Dependency Injection）与依赖查找（Dependency Lookup）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IoC容器和依赖反转模式"><span class="nav-number">1.2.</span> <span class="nav-text">IoC容器和依赖反转模式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

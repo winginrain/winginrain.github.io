@@ -96,13 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://winginrain.github.io/archives/2019/04/index.html">
+  <meta name="description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
+<meta name="keywords" content="Spring,Java框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2">
+<meta property="og:url" content="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-14T07:41:02.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2">
+<meta name="twitter:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
 
 
 
@@ -110,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://winginrain.github.io/archives/2019/04/">
+  <link rel="canonical" href="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/">
 
 
 
@@ -120,7 +125,7 @@
   };
 </script>
 
-  <title>Archive | Hexo</title>
+  <title>SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2 | Hexo</title>
   
 
 
@@ -168,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -223,7 +228,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -265,130 +270,198 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 5 posts in total. Keep on posting.
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="翼雨不抑郁">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/24/读书笔记（二）/" itemprop="url">
-            
-              <span itemprop="name">uml核心元素——think in UML读书笔记（二）</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T19:57:37+08:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-14 15:36:28 / Modified: 15:41:02" itemprop="dateCreated datePublished" datetime="2019-05-14T15:36:28+08:00">2019-05-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Srping技术内幕/" itemprop="url" rel="index"><span itemprop="name">Srping技术内幕</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/24/UML的意义/" itemprop="url">
-            
-              <span itemprop="name">UML基础——Thinking in UML读书笔记（一）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T17:31:59+08:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><a href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext" class="headerlink" title="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"></a>IoC容器系列的设计与实现：BeanFactory和ApplicationContext</h2><p>  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+            <a href="/tags/Java框架/" rel="tag"># Java框架</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/10/Spring技术内幕读书笔记1/" rel="next" title="Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1">
+                <i class="fa fa-chevron-left"></i> Spring Framework的核心：Ioc容器的实现——Spring技术内幕读书笔记1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -408,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -495,6 +577,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><span class="nav-number">1.</span> <span class="nav-text">IoC容器系列的设计与实现：BeanFactory和ApplicationContext</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -625,6 +724,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -640,6 +743,8 @@
 
   
 
+
+  
 
 
   
