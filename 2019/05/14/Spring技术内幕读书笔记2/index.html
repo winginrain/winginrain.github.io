@@ -96,18 +96,21 @@
 
 
 
-  <meta name="description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
+  <meta name="description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同时对应用环境做了许多适配。   在">
 <meta name="keywords" content="Spring,Java框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2">
 <meta property="og:url" content="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
+<meta property="og:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同时对应用环境做了许多适配。   在">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-14T07:41:02.612Z">
+<meta property="og:image" content="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/561636eae4b024012bf3bf88.png">
+<meta property="og:image" content="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/20160212133213899.png">
+<meta property="og:updated_time" content="2019-05-18T12:44:34.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringFramework的核心：IoC容器的实现——Spring技术内幕读书笔记2">
-<meta name="twitter:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。">
+<meta name="twitter:description" content="IoC容器系列的设计与实现：BeanFactory和ApplicationContext  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同时对应用环境做了许多适配。   在">
+<meta name="twitter:image" content="http://winginrain.github.io/2019/05/14/Spring技术内幕读书笔记2/561636eae4b024012bf3bf88.png">
 
 
 
@@ -333,12 +336,24 @@
                 
               
 
-              <time title="Created: 2019-05-14 15:36:28 / Modified: 15:41:02" itemprop="dateCreated datePublished" datetime="2019-05-14T15:36:28+08:00">2019-05-14</time>
+              <time title="Created: 2019-05-14 15:36:28" itemprop="dateCreated datePublished" datetime="2019-05-14T15:36:28+08:00">2019-05-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-18 20:44:34" itemprop="dateModified" datetime="2019-05-18T20:44:34+08:00">2019-05-18</time>
               
             
           </span>
@@ -390,7 +405,52 @@
       
 
       
-        <h2 id="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><a href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext" class="headerlink" title="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"></a>IoC容器系列的设计与实现：BeanFactory和ApplicationContext</h2><p>  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同事对应用环境做了许多适配。</p>
+        <h2 id="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><a href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext" class="headerlink" title="IoC容器系列的设计与实现：BeanFactory和ApplicationContext"></a>IoC容器系列的设计与实现：BeanFactory和ApplicationContext</h2><p>  在Spring IoC容器的设计中，有两个主要的容器系列：一个是实现BeanFactory接口的简单容器系列，只实现容器的最基本功能。另一个是ApplicationContext应用上下文，作为容器的高级形态而存在。应用上下文在简单容器的基础上，增加了许多面向框架的特性，同时对应用环境做了许多适配。</p>
+<p>  在这些SPring提供的基本IoC容器的接口定义和实现的基础上，Spring通过定义BeanDefinition来管理基于Spring的应用中的各种对象以及他们之间的相互依赖关系。BeanDefinition抽象了我们对Bean的定义，是让容器起作用的主要数据类型。所有功能都是建立在通过数据对现实进行抽象的基础上。IoC容器是用来管理对象依赖关系的，对于IoC容器来说，BeanDefinition就是对依赖反转模式中管理的对象依赖关系的抽象，也是容器实现依赖反转功能的核心数据，依赖反转功能是围绕这个BeanDefinition的处理来完成的。</p>
+<h3 id="Spring-IoC容器的设计"><a href="#Spring-IoC容器的设计" class="headerlink" title="Spring IoC容器的设计"></a>Spring IoC容器的设计</h3><p>  下图为IoC容器中的主要接口设计。<br>  <img src="/2019/05/14/Spring技术内幕读书笔记2/561636eae4b024012bf3bf88.png" alt="IoC"></p>
+<ol>
+<li>从接口BeanFactory到HierarchicalBeanFactory，再到ConfigurableBeanFactory，是条<strong>主要的BeanFactory设计路径</strong>。在这条接口设计路径中，BeanFactory接口定义了基本的IoC容器的规范。在这个接口定义中，包括了getBean()这样的IoC容器的基本方法。而HierarchicalBeanFactory接口增加了getParentBeanFactory()的接口功能，使BeanFactory具备双亲IoC容器的管理功能。在接下来的ConfigurableBeanFactory()中，则定义了一些对BeanFactory的配置功能，如通过setParentBeanFactory()接口配置双亲IoC容器，通过addParentBeanFactory()配置Bean后置处理器。</li>
+<li><strong>第二条接口设计主线</strong>是，以ApplicationContext应用上下文接口为核心的接口设计。这里设计的主要接口设计有，从BeanFactory到ListableBeanFactory，再到ApplicationContext，再到WebApplicationContext或者ConfigurableApplicationContext，常用的上下文基本是由这两者实现的。在这个接口体系中，ListableBeanFactory和HierarchicalBeanFactory两个接口，连接BeanFactory和ApplicationContext应用上下文的接口定义。ListableBeanFactory接口细化了许多BeanFactory的接口功能，定义了getBeanDefinitionNames()接口方法。而ApplicationContext接口，通过集成MessageSource、ResourceLoader、ApplicationEventPublisher接口，在BeanFactory简单IoC容器的基础上添加了许多对高级容器的特性的支持。</li>
+<li>这个接口系统是以BeanFactory和ApplicationContext为核心的，而BeanFactory又是IoC容器的最基本接口，在ApplicationContext的设计中，一方面继承BeanFactory接口体系中的ListableBeanFactory、AutowireCapableBeanFactory、HierarchicalBeanFactory等BeanFactory的接口，具备了BeanFactory IoC容器的基本功能，另一方面通过集成MessageSource、ResourceLoader、ApplicationEventPublisher这些接口赋予更高级的IoC容器特性。另外，为了在Web环境中使用它，还设计了WebApplicationContext接口，该接口通过继承ThemeSource接口扩充功能。</li>
+</ol>
+<h3 id="BeanFactory的应用场景"><a href="#BeanFactory的应用场景" class="headerlink" title="BeanFactory的应用场景"></a>BeanFactory的应用场景</h3><p>  BeanFactory提供的是最基本的IoC容器的功能。以下为源代码分析<br>  （BeanFactory是Factory，即IoC容器或对象工厂；FactoryBean是Bean，是一个能产生或者修饰对象生成的工厂Bean。它的实现与设计模式中的工厂模式和修饰器模式类似。）</p>
+<ol>
+<li>用户使用容器时，可以使用转义符“&amp;”来得到FactoryBean本身，用以区分通过容器来获取FactoryBean产生的对象和获取FactoryBean本身。e.g. myJndiObject是一个FactoryBean，使用&amp;myJndiObject得到FactoryBean，而不是myJndiObject这个FactoryBean产生出来的对象。</li>
+<li>BeanFactory接口设计了getBean方法，这个方法使用IoC容器API的主要方法，通过这个方法，可以取得IoC容器中管理的Bean，Bean的取得通过制定名字来索引。getBean方法由带参数和不带参数两种，增加了对Bean检索类型的要求。另外，getBean在获取Bean时，如果需要获取的Bean是Prototype类型，用户可以为这个prototype类型的Bean生成制定构造函数的对应参数。从而在一定程度上控制生成prototype类型的Bean。</li>
+<li>基于BeanFactory，用户可以执行以下操作：<br>|接口方法|操作|<br>|:—:|:—:|<br>|containsBean|判断容器是否含有指定名字的Bean|<br>|isSingleton|查询指定名字的Bean是否为Singleton类型的Bean|<br>|isPrototype|查询指定名字的Bean是否是prototype类型|<br>|isTypeMatch|查询指定名字的Bean的Class类型是否是特定的Class类型|<br>|getType|查询指定名字的Bean的Class类型|<br>|getAliases|查询指定名字的Bean的所有别名|</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public interface BeanFactory &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 用来引用一个实例，或把它和工厂产生的Bean区分开，就是说，如果一个FactoryBean的名字为a，那么，&amp;a会得到那个Factory</span><br><span class="line">     */</span><br><span class="line">    String FACTORY_BEAN_PREFIX = &quot;&amp;&quot;;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 四个不同形式的getBean方法，获取实例</span><br><span class="line">     */</span><br><span class="line">    Object getBean(String name) throws BeansException;</span><br><span class="line"></span><br><span class="line">    &lt;T&gt; T getBean(String name, Class&lt;T&gt; requiredType) throws BeansException;</span><br><span class="line"></span><br><span class="line">    &lt;T&gt; T getBean(Class&lt;T&gt; requiredType) throws BeansException;</span><br><span class="line"></span><br><span class="line">    Object getBean(String name, Object... args) throws BeansException;</span><br><span class="line"></span><br><span class="line">    boolean containsBean(String name); // 是否存在</span><br><span class="line"></span><br><span class="line">    boolean isSingleton(String name) throws NoSuchBeanDefinitionException;// 是否为单实例</span><br><span class="line"></span><br><span class="line">    boolean isPrototype(String name) throws NoSuchBeanDefinitionException;// 是否为原型（多实例）</span><br><span class="line"></span><br><span class="line">    boolean isTypeMatch(String name, Class&lt;?&gt; targetType)</span><br><span class="line">            throws NoSuchBeanDefinitionException;// 名称、类型是否匹配</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; getType(String name) throws NoSuchBeanDefinitionException; // 获取类型</span><br><span class="line"></span><br><span class="line">    String[] getAliases(String name);// 根据实例的名字获取实例的别名</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BeanFactory容器的设计原理"><a href="#BeanFactory容器的设计原理" class="headerlink" title="BeanFactory容器的设计原理"></a>BeanFactory容器的设计原理</h3><p>  BeanFactory接口提供使用IoC容器的规范，并且提供了附和这个IoC容器接口的一系列容器的实现供开发人员使用。以下以XmlBeanFactory的实现为例来说明IoC容器的设计原理。<br>  <img src="/2019/05/14/Spring技术内幕读书笔记2/20160212133213899.png" alt="img"></p>
+<p>  XMLBeanFactory继承自DefaultListableBeanFactory这个类，DefaultListBeanFactory作为一个默认的功能完整的IoC容器使用。XMLBeanFactory在继承DefaultListableBeanFactory的同时，添加了新的功能——一个与XML相关的BeanFactory，可以读取以XML文件方式定义的BeanDefinition的IoC容器。<br>  在XMLBeanFactory中，初始化了一个XMLBeanDefinitionReader对象，以XML方式定义的BeanDefinition就是通过该对象处理的。其中，BeanDefinition信息是以XML文件的形式存在的。由“ClassPath-Resource res=new ClassPathResource(“beans.xml”);”构造需要的Resource，再讲Resource作为构造参数传递给XMLBeanFactory构造函数。IoC容器就可以方便地定位到需要的BeanDefinition信息来对Bean完成容器的初始化以及依赖注入过程。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XmlBeanFactory</span> <span class="keyword">extends</span> <span class="title">DefaultListableBeanFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> XmlBeanDefinitionReader reader = <span class="keyword">new</span> XmlBeanDefinitionReader(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">XmlBeanFactory</span><span class="params">(Resource resource)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(resource, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">XmlBeanFactory</span><span class="params">(Resource resource, BeanFactory parentBeanFactory)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(parentBeanFactory);</span><br><span class="line">        <span class="keyword">this</span>.reader.loadBeanDefinitions(resource);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  在上述代码中，</p>
+<ol>
+<li>XMLBeanFactory构造方法需要得到Resource对象，对XMLBeanDefinitionReader对象的初始化，以及使用这个对象来完成对loadBeanDefinition的调用。这个调用启动从Resource中载入BeanDefinitions的过程，LoadBeanDefinitions同时是IoC初始化的重要组成部分。</li>
+<li>XMLBeanFactory使用DefaultListableBeanFactory作为基类，DefaultListable-BeanFactory是很重要的IoC实现。其他IoC容器中，ApplicationContext等的基本原理与XMLBeanFactory一样，也是通过持有或者扩展DefaultListableBeanFactory来获得基本的IoC容器的功能。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClassPathResource res=<span class="keyword">new</span> ClassPathResource(<span class="string">"beans.xml"</span>);</span><br><span class="line">DefaultListableBeanFactory factory=<span class="keyword">new</span> DefaultListableBeanFactory();</span><br><span class="line">XmlBeanDefinitionReader reader=<span class="keyword">new</span> XmlBeanDefinitionReader(factory);</span><br><span class="line">reader.loadBeanDefinition(res);</span><br></pre></td></tr></table></figure>
+<p>  上述代码使用XMLBeanFactory的这种方式较原始，但交清楚的揭示在IoC容器视线中的那些关键类之间的相互关系。<br>  在使用IoC容器有以下几个步骤：</p>
+<ol>
+<li>创建IoC配置文件的抽象资源，这个抽象资源包含BeanDefinition的定义信息。</li>
+<li>创建一个BeanFactory，使用DefaultListableBeanFactory</li>
+<li>创建一个载入BeanDefinition的读取器，可以采用XMLBeanDefinitionReader来载入XML文件形式的BeanDefinition，通过一个回调配置给BeanFactory。</li>
+<li>从定义好的资源位置读入配置信息，具体的解析过程由XmlBeanDefinitionReader来完成。完成整个载入和注册Bean定义后，需要的IoC容器就建立起来。可以直接使用。</li>
+</ol>
+<h3 id="ApplicationContext的应用场景"><a href="#ApplicationContext的应用场景" class="headerlink" title="ApplicationContext的应用场景"></a>ApplicationContext的应用场景</h3><p>  ApplicationContext除了提供容器的基本功能外，还提供了附加服务，是一个高级形态意义的IoC容器。以下为提供的新特性</p>
+<ol>
+<li>支持不同的信息源。扩展MessageSource接口，可以支持国际化的实现。</li>
+<li>访问资源。这一特性体现在对ResourceLoader和Resource的支持上，可以从不同地方得到Bean定义资源。这些抽象使用户程序可以灵活地定义Bean定义信息，尤其可以从不同I/O途径得到Bean定义信息。</li>
+<li>支持应用事件。继承接口ApplicationEventPublisher，在上下文二中引入事件机制。这些事件和Bean的生命周期的接口为Bean的管理提供了便利。</li>
+<li>在ApplicationContext中提供的附加服务。使得ApplicationContext使用时一种面向框架的使用风格。<h3 id="ApplicationContext容器的设计原理"><a href="#ApplicationContext容器的设计原理" class="headerlink" title="ApplicationContext容器的设计原理"></a>ApplicationContext容器的设计原理</h3>以FileSystemXmlApplicationContext的实现为例说明ApplicationContext容器的设计原理。<br>在FileSystemXmlApplicationContext的设计中，ApplicationContext应用上下文的主要功能在FileSystemXMLApplicationContext的基类AbstractXMLApplicationContext中实现。在FileSystemXMLApplicationContext中，只需要实现和它相关的两个功能。</li>
+<li><p>如果应用直接使用FileSYstemXMLApplicationContext，对于实例化这个应用上下文的支持，同时启动IoC容器的refresh()过程。如下代码显示。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String[] configLocations, <span class="keyword">boolean</span> refresh, ApplicationContext parent)</span> </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> BeansException </span>&#123; </span><br><span class="line">     </span><br><span class="line">            <span class="keyword">super</span>(parent); </span><br><span class="line">            setConfigLocations(configLocations); </span><br><span class="line">            <span class="keyword">if</span> (refresh) &#123; </span><br><span class="line">                refresh(); </span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>这个refresh()过程会牵涉IoC容器启动的一系列复杂操作。</p>
+</li>
+<li><p>与FileSystemXMLApplicationContext设计具体相关的功能。这部分与怎么从文件系统中加载XML的Bean定义资源有关。</p>
+<p>通过这个过程，可以在文件系统中读取以XML形式存在的BeanDefinition做准备，因为不同的应用上下文实现对应不同的读取BeanDefinition的方式。实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> Resource <span class="title">getResourceByPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (path != <span class="keyword">null</span> &amp;&amp; path.startsWith(<span class="string">"/"</span>)) &#123;</span><br><span class="line">		path = path.substring(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> FileSystemResource(path);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>FileSystemXmlApplicationContext实现代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileSystemXmlApplicationContext</span> <span class="keyword">extends</span> <span class="title">AbstractXmlApplicationContext</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(ApplicationContext parent)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(parent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String configLocation)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(<span class="keyword">new</span> String[] &#123;configLocation&#125;, <span class="keyword">true</span>, <span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String... configLocations)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(configLocations, <span class="keyword">true</span>, <span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String[] configLocations, ApplicationContext parent)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(configLocations, <span class="keyword">true</span>, parent);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String[] configLocations, <span class="keyword">boolean</span> refresh)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(configLocations, refresh, <span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileSystemXmlApplicationContext</span><span class="params">(String[] configLocations, <span class="keyword">boolean</span> refresh, ApplicationContext parent)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//调用父类的构造函数</span></span><br><span class="line">		<span class="keyword">super</span>(parent);</span><br><span class="line">		<span class="comment">//设置配置文件的地址，如application.xml</span></span><br><span class="line">		setConfigLocations(configLocations);</span><br><span class="line">		<span class="keyword">if</span> (refresh) &#123;</span><br><span class="line">			<span class="comment">//刷新容器，其实就是重新初始化容器</span></span><br><span class="line">			refresh();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> Resource <span class="title">getResourceByPath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (path != <span class="keyword">null</span> &amp;&amp; path.startsWith(<span class="string">"/"</span>)) &#123;</span><br><span class="line">			path = path.substring(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> FileSystemResource(path);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -438,6 +498,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/15/算法设计读书笔记1/" rel="prev" title="算法设计读书笔记1">
+                算法设计读书笔记1 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -506,7 +570,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -588,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><span class="nav-number">1.</span> <span class="nav-text">IoC容器系列的设计与实现：BeanFactory和ApplicationContext</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC容器系列的设计与实现：BeanFactory和ApplicationContext"><span class="nav-number">1.</span> <span class="nav-text">IoC容器系列的设计与实现：BeanFactory和ApplicationContext</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-IoC容器的设计"><span class="nav-number">1.1.</span> <span class="nav-text">Spring IoC容器的设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanFactory的应用场景"><span class="nav-number">1.2.</span> <span class="nav-text">BeanFactory的应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeanFactory容器的设计原理"><span class="nav-number">1.3.</span> <span class="nav-text">BeanFactory容器的设计原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ApplicationContext的应用场景"><span class="nav-number">1.4.</span> <span class="nav-text">ApplicationContext的应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ApplicationContext容器的设计原理"><span class="nav-number">1.5.</span> <span class="nav-text">ApplicationContext容器的设计原理</span></a></li></ol></li></ol></div>
             
 
           </div>
